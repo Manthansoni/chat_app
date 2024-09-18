@@ -181,6 +181,6 @@ try:
 except Exception as e:
     pass
 
-CSRF_TRUSTED_ORIGINS = ['https://chat-application-8dwd.onrender.com']
+CSRF_TRUSTED_ORIGINS = ['https://chat-application-8dwd.onrender.com', 'https://chat-app-3c4f.onrender.com']
 
 handler404 = "chat.views.page_not_found_view"
