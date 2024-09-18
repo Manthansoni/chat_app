@@ -26,3 +26,7 @@ urlpatterns = [
     path("auth/login/", LoginView.as_view(template_name="chat/LoginPage.html"), name="login-user"),
     path("auth/logout/", LogoutView.as_view(), name="logout-user"),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+
+if settings.DEBUG is False:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
