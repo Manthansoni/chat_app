@@ -139,7 +139,7 @@
     const userId = "{{ request.user.id }}";
     const username = "{{ request.user.username }}";
     const receiverId = "{{ userid }}"
-    const chatSocket = new WebSocket("wss://" + window.location.host + '/ws/chat/' + roomName + '/');
+    const chatSocket = new WebSocket("ws://" + window.location.host + '/ws/chat/' + roomName + '/');
     let reconnectInterval = 3000; // Time to wait before attempting a reconnect (3 seconds)
     let maxRetries = 10; // Max number of reconnect attempts
     let retries = 0;
