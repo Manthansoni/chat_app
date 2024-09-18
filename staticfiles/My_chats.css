@@ -30,7 +30,7 @@ body {
 }
 
 #friends button{
-    background:#A4E2FF;
+    background:#EF9A8F;
     margin-left:10px;
     border-radius:12px;
     cursor:pointer;
@@ -38,7 +38,6 @@ body {
 }
 
 .friend{
-    overflow:scroll;
 	position:relative;
 }
 .friend img{
