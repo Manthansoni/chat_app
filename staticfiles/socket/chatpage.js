@@ -3,7 +3,7 @@ const roomName = "{{ room_name }}";
 const userId = "{{ request.user.id }}";
 const username = "{{ request.user.username }}";
 const receiverId = "{{ userid }}"
-const chatSocket = new WebSocket("ws://" + window.location.host + '/ws/chat/' + roomName + '/');
+const chatSocket = new WebSocket("wss://" + window.location.host + '/ws/chat/' + roomName + '/');
 let reconnectInterval = 3000; // Time to wait before attempting a reconnect (3 seconds)
 let maxRetries = 10; // Max number of reconnect attempts
 let retries = 0;
@@ -57,7 +57,7 @@ function handleFileUpload(event) {
     }
 }
 
-function connectSocket1(){
+function connectSocket(){
     chatSocket.onopen = function (e) {
       console.log("The connection was setup successfully !");
       var foo = document.getElementById('loader-wrapper');

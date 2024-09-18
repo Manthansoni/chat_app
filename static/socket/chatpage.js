@@ -3,9 +3,10 @@ const roomName = "{{ room_name }}";
 const userId = "{{ request.user.id }}";
 const username = "{{ request.user.username }}";
 const receiverId = "{{ userid }}"
+console.log(roomName, userId, receiverId, username)
 const chatSocket = new WebSocket("wss://" + window.location.host + '/ws/chat/' + roomName + '/');
-let reconnectInterval = 3000; // Time to wait before attempting a reconnect (3 seconds)
-let maxRetries = 10; // Max number of reconnect attempts
+let reconnectInterval = 1000; // Time to wait before attempting a reconnect (3 seconds)
+let maxRetries = 5; // Max number of reconnect attempts
 let retries = 0;
 
 // Function to toggle the emoji picker
@@ -57,7 +58,7 @@ function handleFileUpload(event) {
     }
 }
 
-function connectSocket1(){
+function connectSocket(){
     chatSocket.onopen = function (e) {
       console.log("The connection was setup successfully !");
       var foo = document.getElementById('loader-wrapper');
@@ -69,13 +70,13 @@ function connectSocket1(){
       console.log(e);
 
         // Check if it's a normal close (code 1000), if not, attempt to reconnect
-        if (event.code !== 1000 && retries < maxRetries) {
-          retries++;
-          console.log(`Reconnecting... Attempt ${retries}`);
-          setTimeout(connectSocket1, reconnectInterval);
-        } else {
-          console.log("Max reconnect attempts reached or socket closed normally.");
-        }
+//        if (event.code !== 1000 && retries < maxRetries) {
+//          retries++;
+//          console.log(`Reconnecting... Attempt ${retries}`);
+//          setTimeout(connectSocket, reconnectInterval);
+//        } else {
+//          console.log("Max reconnect attempts reached or socket closed normally.");
+//        }
     };
 
     document.querySelector("#id_message_send_input").focus();
