@@ -2,10 +2,20 @@
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
 
 html, body {
+    margin: 0;
     background: #e5e5e5;
     font-family: 'Lato', sans-serif;
     margin: 0px auto;
 }
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
 ::selection{
   background: rgba(82,179,217,0.3);
   color: inherit;
@@ -529,30 +539,9 @@ input.textarea {
 
 
 /* Base styles for all screen sizes */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-}
 
-.menu {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #2C3E50;
-    padding: 10px;
-    color: white;
-}
 
-.chat {
-    list-style: none;
-    padding: 0;
-    margin: 80px 0px 35px 0px;
-    flex-grow: 1;
-    overflow-y: scroll;
-}
+
 
 .self, .other {
     display: flex;
@@ -565,11 +554,7 @@ body {
 }
 
 .self .msg, .other .msg {
-    max-width: 60%;
     background: #f1f0f0;
-    padding: 10px;
-    border-radius: 10px;
-    position: relative;
 }
 
 .self .msg {
@@ -610,26 +595,18 @@ body {
 
 /* Smaller devices (phones) */
 @media only screen and (max-width: 480px) {
-    .menu {
-        flex-direction: column;
+
+    .name {
+        font-size: 20px;
     }
 
     .back img {
-        width: 20px;
-        height: 20px;
+        width: 40px;
+        height: 40px;
     }
 
     .self .msg, .other .msg {
-        max-width: 90%;
-        display:none;
-    }
-
-    .msg p{
-        font-size: 5rem;
-    }
-
-    .msg time{
-        font-size: 4rem;
+        max-width: 100%;
     }
 
     .video_call img {
@@ -641,7 +618,7 @@ body {
 /* Emoji Picker Visibility Toggle */
 @media (max-width: 600px) {
     .emoji-picker {
-        display: flex;
+        display: none;
         flex-wrap: wrap;
         max-width: 100%;
         overflow: hidden;
