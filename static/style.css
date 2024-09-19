@@ -395,38 +395,38 @@ input.textarea {
 }
 
 /* Styling the emoji picker */
-        .emoji-picker {
-            position: fixed;
-            bottom: 55px; /* Adjust to position above the clickable element */
-            left: 10px;
-            display: none;
-            background-color: #fff;
-            border: 1px solid #ccc;
-            padding: 10px;
-            border-radius: 5px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-        }
+.emoji-picker {
+    position: fixed;
+    bottom: 55px; /* Adjust to position above the clickable element */
+    left: 10px;
+    display: none;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
 
-        .emoji {
-            cursor: pointer;
-            font-size: 24px;
-            padding: 5px;
-        }
+.emoji {
+    cursor: pointer;
+    font-size: 24px;
+    padding: 5px;
+}
 
-        .emoji:hover {
-            background-color: #f0f0f0;
-            border-radius: 5px;
-        }
+.emoji:hover {
+    background-color: #f0f0f0;
+    border-radius: 5px;
+}
 
-        /* Styling the button to trigger emoji picker */
-        .trigger-btn {
-            cursor: pointer;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 5px;
-        }
+/* Styling the button to trigger emoji picker */
+.trigger-btn {
+    cursor: pointer;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+}
 
 #loader-wrapper {
             position: fixed;
@@ -526,3 +526,127 @@ input.textarea {
                 /* Firefox 16+, IE 10+, Opera */
             }
         }
+
+
+/* Base styles for all screen sizes */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2C3E50;
+    padding: 10px;
+    color: white;
+}
+
+.chat {
+    list-style: none;
+    padding: 0;
+    margin: 80px 0px 35px 0px;
+    flex-grow: 1;
+    overflow-y: scroll;
+}
+
+.self, .other {
+    display: flex;
+    align-items: flex-start;
+    margin: 10px 0;
+}
+
+.self {
+    justify-content: flex-end;
+}
+
+.self .msg, .other .msg {
+    max-width: 60%;
+    background: #f1f0f0;
+    padding: 10px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.self .msg {
+    background-color: #DCF8C6;
+}
+
+
+
+/* Mobile styles */
+@media only screen and (max-width: 768px) {
+    .menu {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .name {
+        font-size: 16px;
+    }
+
+    .video_call img {
+        width: 28px;
+        height: 28px;
+    }
+
+    .self .msg, .other .msg {
+        max-width: 80%; /* More space for smaller screens */
+    }
+
+    input.textarea {
+        width: calc(100% - 60px);
+    }
+
+    .back img {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+/* Smaller devices (phones) */
+@media only screen and (max-width: 480px) {
+    .menu {
+        flex-direction: column;
+    }
+
+    .back img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .self .msg, .other .msg {
+        max-width: 90%;
+        display:none;
+    }
+
+    .msg p{
+        font-size: 5rem;
+    }
+
+    .msg time{
+        font-size: 4rem;
+    }
+
+    .video_call img {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+/* Emoji Picker Visibility Toggle */
+@media (max-width: 600px) {
+    .emoji-picker {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 100%;
+        overflow: hidden;
+        justify-content: space-between;
+        padding: 5px;
+        background-color: #f1f0f0;
+    }
+}
