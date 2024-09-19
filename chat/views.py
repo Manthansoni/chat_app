@@ -17,7 +17,8 @@ def register_user(request):
         if not user:
             user1 = User.objects.create_user(username=username, password=password)
             user1.save()
-            redirect("chat")
+            messages.success(request, "User register successfully. Please login to continue")
+            return redirect("/auth/login")
         else:
             messages.error(request, "Error: Username already exists ")
     return render(request, "chat/RegistrationPage.html")

@@ -40,6 +40,15 @@
                 <div class="p-2">
                     <div class="col-md-6 mt-5">
                         <h3 class="m-3">LOGIN</h3>
+                        {% for message in messages %}
+                        <div class="alert {{ message.tags }} alert-dismissible" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            {{ message | safe }}
+                        </div>
+                        {% endfor %}
+
                         <form method="post">
                             {% csrf_token %}
                             <div class="form-group">
