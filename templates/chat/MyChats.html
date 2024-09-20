@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
     <title>MeChat</title>
     <link
             href="{% static 'logo.png' %}"
@@ -35,11 +36,12 @@
 </div>
 
 {% include "chat/header.html" %}
-<div class="hero-wrap js-fullheight">
+<div class="hero-wrap">
     <div class="overlay"></div>
     <div id="particles-js"></div>
     <section class="ftco-section">
-        <div class="container bg-light">
+        <div class="container">
+            <h2 style="color:white;">Your Chats :</h2>
             <div id="chatbox">
                 <div id="friendslist">
                     <div id="friends">

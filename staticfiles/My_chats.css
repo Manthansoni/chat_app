@@ -13,7 +13,7 @@ body {
     height: 60vh;
     border-radius: 6px;
     overflow: hidden;
-    margin: 5% auto;
+    margin: auto;
     position: relative;
 }
 
@@ -30,7 +30,7 @@ body {
 }
 
 #friends button{
-    background:#EF9A8F;
+    background:white;
     margin-left:10px;
     border-radius:12px;
     cursor:pointer;
@@ -38,6 +38,7 @@ body {
 }
 
 .friend{
+    overflow:hidden;
 	position:relative;
 }
 .friend img{
@@ -196,12 +197,12 @@ body {
 
 @media screen and (max-width: 480px) {
     #chatbox {
-        width: 200%;
-        height: 40vh;
+        width: 80%;
+        height: 60vh;
     }
 
     #friendslist {
-        height: 30vh;
+        height: 60vh;
     }
 
     .friend img {
