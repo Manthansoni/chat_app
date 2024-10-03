@@ -6,8 +6,6 @@ from django.contrib import messages
 from user.models import MyUser as User
 from .models import Message, Conversation
 
-def demo_view(request):
-    return render(request, "chat/demo.html")
 
 def register_user(request):
     if request.POST:
