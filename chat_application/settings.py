@@ -92,10 +92,10 @@ WSGI_APPLICATION = 'chat_application.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'chat_application_jt0s',
+        'NAME': 'chat_application_wnar',
         'USER': 'ms04',
-        'PASSWORD': '8r55NNpcBtA1PXQPAii55P7dZ5HyTApx',
-        'HOST': 'dpg-cslfkcjqf0us738sfthg-a.oregon-postgres.render.com',
+        'PASSWORD': 'NvWHRLTj7hMEPNP5NFd15pcXGN18A0MN',
+        'HOST': 'dpg-d011gv2dbo4c73doritg-a.oregon-postgres.render.com',
         'POST': '5432',
     }
 }
